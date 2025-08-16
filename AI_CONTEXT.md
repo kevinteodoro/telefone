@@ -35,6 +35,13 @@
 7. **Conteúdo e Tom**:
    - Clareza, utilidade e profundidade; responda intenção de busca (informacional/transacional/navegacional).
    - Use FAQs quando fizer sentido para *featured snippets*.
+8. **Google Tag Manager (OBRIGATÓRIO)**:
+   - **SEMPRE** incluir o snippet do GTM em TODAS as páginas criadas.
+   - **Código no `<head>`**: antes do `</head>`, logo após as meta tags.
+   - **Código após `<body>`**: logo após a abertura da tag `<body>`.
+   - **ID do container**: usar `GTM-NLMC2HLF` (será rotacionado por segurança).
+   - **Posicionamento**: GTM deve ser o primeiro script no head e o primeiro elemento no body.
+   - **Fallback**: incluir sempre o código noscript para usuários sem JavaScript.
 
 ## Checklist para **nova página**
 - [ ] Definir **palavra-chave foco** e intenção de busca.
@@ -45,6 +52,7 @@
 - [ ] JSON-LD adequado (WebPage/Article + BreadcrumbList; FAQ se houver).
 - [ ] CSS crítico inline + restante minificado; fontes otimizadas.
 - [ ] JS `defer`; sem bloqueio; sem libs externas.
+- [ ] **GOOGLE TAG MANAGER** incluído no head e body (OBRIGATÓRIO).
 - [ ] Teste mobile (quebra de layout, tipografia, CLS).
 - [ ] Verificar Lighthouse (Perf/SEO/A11y).
 - [ ] Adicionar à `sitemap.xml` (e link no `robots.txt`).
@@ -56,13 +64,21 @@
 - Um CSS global (`/assets/css/styles.min.css`) + CSS crítico inline por página.
 - JS global mínimo (`/assets/js/main.js`) + JS específico por página se necessário.
 
-## Template HTML Base (SEO + Mobile)
+## Template HTML Base (SEO + Mobile + GTM)
 ```html
 <!doctype html>
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NLMC2HLF');</script>
+  <!-- End Google Tag Manager -->
 
   <title><!-- 55–60c: Título com keyword foco --></title>
   <meta name="description" content="<!-- 120–160c: descrição atraente com keyword -->" />
@@ -120,6 +136,11 @@
   <link rel="stylesheet" href="/assets/css/styles.min.css" />
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NLMC2HLF"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
   <header class="container" role="banner" aria-label="Topo do site">
     <nav aria-label="Breadcrumb">
       <ol>
