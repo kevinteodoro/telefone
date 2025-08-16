@@ -1,0 +1,9 @@
+# Cursor Rules para o projeto Telefone
+
+SEMPRE considere o arquivo AI_CONTEXT.md como contexto principal antes de sugerir qualquer mudança.
+
+Regras:
+1. Leia e analise o AI_CONTEXT.md primeiro
+2. Use o contexto fornecido para todas as sugestões
+3. Mantenha consistência com as diretrizes do projeto
+4. Consulte o contexto antes de fazer alterações

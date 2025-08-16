@@ -1,39 +1,334 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kevin's First Website</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
-            background-color: #f0f0f0;
-        }
-        .container {
-            background-color: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        h1 {
-            color: #333;
-            margin-bottom: 20px;
-        }
-        p {
-            color: #666;
-            font-size: 18px;
-            line-height: 1.6;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Telefones Operadoras Internet Brasil - Contatos Principais</title>
+  <meta name="description" content="Encontre os telefones das principais operadoras de internet do Brasil. Claro, Vivo, TIM, Oi e outras. Atendimento 24h e suporte técnico." />
+
+  <link rel="canonical" href="https://www.exemplo.com.br/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Telefones Operadoras Internet Brasil - Contatos Principais" />
+  <meta property="og:description" content="Encontre os telefones das principais operadoras de internet do Brasil. Claro, Vivo, TIM, Oi e outras. Atendimento 24h e suporte técnico." />
+  <meta property="og:url" content="https://www.exemplo.com.br/" />
+  <meta property="og:image" content="https://www.exemplo.com.br/assets/img/og.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Telefones Operadoras Internet Brasil - Contatos Principais" />
+  <meta name="twitter:description" content="Encontre os telefones das principais operadoras de internet do Brasil. Claro, Vivo, TIM, Oi e outras. Atendimento 24h e suporte técnico." />
+  <meta name="twitter:image" content="https://www.exemplo.com.br/assets/img/og.jpg" />
+
+  <!-- CSS crítico inline -->
+  <style>
+    :root { 
+      line-height: 1.5; 
+      --primary-color: #2563eb;
+      --secondary-color: #1e40af;
+      --accent-color: #f59e0b;
+      --text-color: #1f2937;
+      --light-bg: #f8fafc;
+      --border-color: #e2e8f0;
+    }
+    * { box-sizing: border-box; }
+    body { 
+      margin: 0; 
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; 
+      color: var(--text-color); 
+      background: var(--light-bg); 
+    }
+    img { max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+    header, main, footer { width: min(92ch, 92%); margin-inline: auto; }
+    .container { padding: 16px 0; }
+    
+    /* Header */
+    .header { background: white; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    .header-content { display: flex; align-items: center; justify-content: space-between; padding: 1rem 0; }
+    .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary-color); }
+    
+    /* Search Component */
+    .search-container { 
+      background: white; 
+      padding: 2rem 0; 
+      border-bottom: 1px solid var(--border-color);
+    }
+    .search-box { 
+      max-width: 600px; 
+      margin: 0 auto; 
+      text-align: center; 
+    }
+    .search-input { 
+      width: 100%; 
+      padding: 1rem; 
+      border: 2px solid var(--border-color); 
+      border-radius: 8px; 
+      font-size: 1rem; 
+      margin-bottom: 1rem;
+    }
+    .search-input:focus { 
+      outline: none; 
+      border-color: var(--primary-color); 
+    }
+    
+    /* Operadoras Grid */
+    .operadoras-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+      gap: 1.5rem; 
+      margin: 2rem 0; 
+    }
+    .operadora-card { 
+      background: white; 
+      border-radius: 12px; 
+      padding: 1.5rem; 
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .operadora-card:hover { 
+      transform: translateY(-2px); 
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
+    }
+    .operadora-logo { 
+      width: 60px; 
+      height: 60px; 
+      background: var(--primary-color); 
+      border-radius: 50%; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      color: white; 
+      font-weight: bold; 
+      margin-bottom: 1rem; 
+    }
+    .operadora-nome { 
+      font-size: 1.25rem; 
+      font-weight: bold; 
+      margin-bottom: 0.5rem; 
+      color: var(--text-color); 
+    }
+    .telefone { 
+      font-size: 1.1rem; 
+      color: var(--primary-color); 
+      font-weight: 600; 
+      margin-bottom: 0.5rem; 
+    }
+    .tipo-atendimento { 
+      font-size: 0.9rem; 
+      color: #6b7280; 
+      margin-bottom: 1rem; 
+    }
+    .btn-ligar { 
+      background: var(--primary-color); 
+      color: white; 
+      padding: 0.75rem 1.5rem; 
+      border-radius: 6px; 
+      text-decoration: none; 
+      display: inline-block; 
+      transition: background 0.2s; 
+    }
+    .btn-ligar:hover { background: var(--secondary-color); }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .operadoras-grid { grid-template-columns: 1fr; }
+      .header-content { flex-direction: column; gap: 1rem; }
+    }
+  </style>
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebPage",
+    "name":"Telefones Operadoras Internet Brasil - Contatos Principais",
+    "url":"https://www.exemplo.com.br/",
+    "description":"Encontre os telefones das principais operadoras de internet do Brasil. Claro, Vivo, TIM, Oi e outras. Atendimento 24h e suporte técnico.",
+    "breadcrumb":{
+      "@type":"BreadcrumbList",
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Início","item":"https://www.exemplo.com.br/"}
+      ]
+    }
+  }
+  </script>
 </head>
 <body>
-    <div class="container">
-        <h1>Hello World!</h1>
-        <p>I am the first website to make money by Kevin</p>
+  <header class="header" role="banner">
+    <div class="container header-content">
+      <div class="logo">📞 Telefones Operadoras</div>
+      <nav aria-label="Navegação principal">
+        <a href="#operadoras" class="btn-ligar">Ver Operadoras</a>
+      </nav>
     </div>
+  </header>
+
+  <main role="main">
+    <!-- Componente de Pesquisa -->
+    <section class="search-container" aria-labelledby="search-title">
+      <div class="container">
+        <div class="search-box">
+          <h1 id="search-title">Telefones das Principais Operadoras de Internet do Brasil</h1>
+          <p>Encontre rapidamente o contato da operadora que você precisa. Pesquise por nome ou navegue pela lista completa.</p>
+          
+          <input 
+            type="text" 
+            class="search-input" 
+            id="searchOperadora" 
+            placeholder="Digite o nome da operadora (ex: Claro, Vivo, TIM, Oi...)"
+            aria-label="Pesquisar operadora por nome"
+          />
+          <p class="tipo-atendimento">Resultados filtrados em tempo real</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lista de Operadoras -->
+    <section class="container" id="operadoras" aria-labelledby="operadoras-title">
+      <h2 id="operadoras-title">Principais Operadoras de Internet</h2>
+      <p>Lista completa com telefones de atendimento ao cliente e suporte técnico das maiores operadoras do Brasil.</p>
+      
+      <div class="operadoras-grid" id="operadorasGrid">
+        <!-- Operadoras serão inseridas via JavaScript -->
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="container" aria-labelledby="faq-title">
+      <h2 id="faq-title">Perguntas Frequentes</h2>
+      <dl>
+        <dt>Como funciona o atendimento das operadoras?</dt>
+        <dd>As operadoras oferecem atendimento 24 horas por dia, 7 dias por semana, através de telefone, chat online e aplicativos móveis.</dd>
+        
+        <dt>Qual o melhor horário para ligar?</dt>
+        <dd>O horário comercial (8h às 18h) geralmente tem menor tempo de espera, mas o atendimento está disponível 24h.</dd>
+        
+        <dt>Preciso ter contrato ativo para receber atendimento?</dt>
+        <dd>Sim, na maioria dos casos é necessário ter um contrato ativo para receber suporte técnico ou atendimento ao cliente.</dd>
+        
+        <dt>Como denunciar problemas com a operadora?</dt>
+        <dd>Você pode denunciar problemas através da Anatel (Agência Nacional de Telecomunicações) ou Procon de sua cidade.</dd>
+      </dl>
+      
+      <script type="application/ld+json">
+      {
+        "@context":"https://schema.org",
+        "@type":"FAQPage",
+        "mainEntity":[
+          {"@type":"Question","name":"Como funciona o atendimento das operadoras?","acceptedAnswer":{"@type":"Answer","text":"As operadoras oferecem atendimento 24 horas por dia, 7 dias por semana, através de telefone, chat online e aplicativos móveis."}},
+          {"@type":"Question","name":"Qual o melhor horário para ligar?","acceptedAnswer":{"@type":"Answer","text":"O horário comercial (8h às 18h) geralmente tem menor tempo de espera, mas o atendimento está disponível 24h."}},
+          {"@type":"Question","name":"Preciso ter contrato ativo para receber atendimento?","acceptedAnswer":{"@type":"Answer","text":"Sim, na maioria dos casos é necessário ter um contrato ativo para receber suporte técnico ou atendimento ao cliente."}},
+          {"@type":"Question","name":"Como denunciar problemas com a operadora?","acceptedAnswer":{"@type":"Answer","text":"Você pode denunciar problemas através da Anatel (Agência Nacional de Telecomunicações) ou Procon de sua cidade."}}
+        ]
+      }
+      </script>
+    </section>
+  </main>
+
+  <footer class="container" role="contentinfo">
+    <p>&copy; <span id="year"></span> Telefones Operadoras Internet Brasil. Todos os direitos reservados.</p>
+  </footer>
+
+  <script defer>
+    // Dados das operadoras
+    const operadoras = [
+      {
+        nome: "Claro",
+        telefone: "0800 726 0800",
+        tipo: "Atendimento 24h",
+        cor: "#e60000"
+      },
+      {
+        nome: "Vivo",
+        telefone: "0800 701 0180",
+        tipo: "Atendimento 24h",
+        cor: "#ff6600"
+      },
+      {
+        nome: "TIM",
+        telefone: "0800 841 0800",
+        tipo: "Atendimento 24h",
+        cor: "#0000cc"
+      },
+      {
+        nome: "Oi",
+        telefone: "0800 031 0800",
+        tipo: "Atendimento 24h",
+        cor: "#ffcc00"
+      },
+      {
+        nome: "NET/Claro",
+        telefone: "0800 726 0800",
+        tipo: "Atendimento 24h",
+        cor: "#e60000"
+      },
+      {
+        nome: "Vivo Fibra",
+        telefone: "0800 701 0180",
+        tipo: "Atendimento 24h",
+        cor: "#ff6600"
+      },
+      {
+        nome: "TIM Live",
+        telefone: "0800 841 0800",
+        tipo: "Atendimento 24h",
+        cor: "#0000cc"
+      },
+      {
+        nome: "Oi Fibra",
+        telefone: "0800 031 0800",
+        tipo: "Atendimento 24h",
+        cor: "#ffcc00"
+      }
+    ];
+
+    // Função para renderizar operadoras
+    function renderizarOperadoras(listaOperadoras = operadoras) {
+      const grid = document.getElementById('operadorasGrid');
+      grid.innerHTML = '';
+      
+      listaOperadoras.forEach(operadora => {
+        const card = document.createElement('div');
+        card.className = 'operadora-card';
+        card.innerHTML = `
+          <div class="operadora-logo" style="background: ${operadora.cor}">${operadora.nome.charAt(0)}</div>
+          <div class="operadora-nome">${operadora.nome}</div>
+          <div class="telefone">${operadora.telefone}</div>
+          <div class="tipo-atendimento">${operadora.tipo}</div>
+          <a href="tel:${operadora.telefone.replace(/\s/g, '')}" class="btn-ligar">📞 Ligar Agora</a>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    // Função de pesquisa
+    function pesquisarOperadora(termo) {
+      if (!termo) {
+        renderizarOperadoras();
+        return;
+      }
+      
+      const filtradas = operadoras.filter(operadora => 
+        operadora.nome.toLowerCase().includes(termo.toLowerCase())
+      );
+      renderizarOperadoras(filtradas);
+    }
+
+    // Event listeners
+    document.addEventListener('DOMContentLoaded', function() {
+      renderizarOperadoras();
+      
+      const searchInput = document.getElementById('searchOperadora');
+      searchInput.addEventListener('input', (e) => {
+        pesquisarOperadora(e.target.value);
+      });
+      
+      // Ano atual no footer
+      document.getElementById('year').textContent = new Date().getFullYear();
+    });
+  </script>
 </body>
 </html> 
