@@ -132,9 +132,18 @@
     }
     
     .last-updated {
-      color: #64748b;
-      margin: 0.5rem 0 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(8px);
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
       font-size: 0.875rem;
+      font-weight: 500;
+      color: white;
+      margin: 1rem auto;
+      width: fit-content;
     }
     
     /* Breadcrumb */
@@ -495,9 +504,12 @@
       <div class="header-content">
         <h1>Telefone da Vivo: números atualizados para atendimento (2025)</h1>
         <p>Quem já tentou falar com a operadora sabe que encontrar o número certo pode ser uma dor de cabeça. Para facilitar a sua vida, preparamos um guia completo com todos os telefones da Vivo, organizados de acordo com cada tipo de atendimento: suporte técnico, contratação de serviços, fatura, internet e muito mais.</p>
-        <p class="last-updated">
-          Atualizado em <time datetime="2025-08-17">17 ago 2025</time>
-        </p>
+        <div class="last-updated">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+          </svg>
+          <span>Atualizado Agosto 2025</span>
+        </div>
       </div>
     </div>
   </header>
