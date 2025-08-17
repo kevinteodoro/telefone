@@ -59,6 +59,7 @@
       --phone-label: #64748b;
       --section-spacing: 3rem;
       --card-padding: 1.5rem;
+      --whatsapp-green: #25D366;
     }
     
     * { 
@@ -213,6 +214,31 @@
       transform: translateY(-1px);
     }
     
+    /* WhatsApp Button */
+    .whatsapp-button {
+      background: var(--whatsapp-green);
+      color: white;
+      padding: 0.75rem 1rem;
+      border-radius: 6px;
+      font-weight: 500;
+      transition: all 0.2s;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .whatsapp-button:hover {
+      background: #128C7E;
+      transform: translateY(-1px);
+    }
+    
+    .whatsapp-icon {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+    
     /* Divider */
     .divider {
       border: none;
@@ -291,8 +317,8 @@
   <header class="page-header">
     <div class="container">
       <div class="header-content">
-        <h1>Telefones da Vivo</h1>
-        <p>Saiba Qual Número Ligar em Cada Situação</p>
+        <h1>Vivo</h1>
+        <p>Telefones para Atendimento, Suporte e Vendas</p>
       </div>
     </div>
   </header>
@@ -302,125 +328,119 @@
     <div class="container">
       <ol>
         <li><a href="/">Início</a></li>
-        <li aria-current="page">Telefones Vivo</li>
+        <li aria-current="page">Vivo</li>
       </ol>
     </div>
   </nav>
 
   <main class="container">
-    <!-- Introduction -->
+    <!-- WhatsApp Section -->
     <section class="content-section">
-      <p>Quem já tentou falar com a operadora sabe que encontrar o número certo pode ser uma dor de cabeça. Para facilitar a sua vida, preparamos um guia completo com todos os telefones da Vivo, organizados de acordo com cada tipo de atendimento: suporte técnico, contratação de serviços, fatura, internet e muito mais.</p>
+      <h2>Whatsapp 11 99915-1515</h2>
+      <div class="phone-number">
+        <div class="phone-info">
+          <div class="phone-label">Atendimento via WhatsApp</div>
+          <div class="phone-desc">Suporte e informações pelo WhatsApp</div>
+        </div>
+        <a href="https://wa.me/5511999151515" target="_blank" rel="noopener" class="whatsapp-button">
+          <svg class="whatsapp-icon" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+          </svg>
+          WhatsApp
+        </a>
+      </div>
     </section>
 
-    <!-- Main Phone Numbers -->
+    <!-- Central da Vendas -->
     <section class="content-section">
-      <h2>Telefones da Vivo para Atendimento ao Cliente</h2>
-      <p>A Vivo oferece diferentes números de contato, dependendo do tipo de serviço que você utiliza. Confira os principais:</p>
+      <h2>Central da Vendas</h2>
+      
+      <h3>Para famílias e pessoa física</h3>
+      <div class="phone-number">
+        <div class="phone-info">
+          <div class="phone-label">Plano de celular</div>
+          <div class="phone-desc">Contratação de planos móveis</div>
+        </div>
+        <a href="tel:08007700051" class="phone-button">📞 0800 770 0051</a>
+      </div>
       
       <div class="phone-number">
         <div class="phone-info">
-          <div class="phone-label">Vivo Móvel (celular)</div>
-          <div class="phone-desc">A partir de um número Vivo ou de qualquer telefone</div>
+          <div class="phone-label">Plano de internet, tv e telefone</div>
+          <div class="phone-desc">Contratação de planos residenciais</div>
+        </div>
+        <a href="tel:08007709800" class="phone-button">📞 0800 770 9800</a>
+      </div>
+      
+      <h3>Para empresas e pessoa jurídica</h3>
+      <div class="phone-number">
+        <div class="phone-info">
+          <div class="phone-label">Plano de celular</div>
+          <div class="phone-desc">Contratação de planos corporativos</div>
+        </div>
+        <a href="tel:08007710180" class="phone-button">📞 0800 771 0180</a>
+      </div>
+      
+      <div class="phone-number">
+        <div class="phone-info">
+          <div class="phone-label">Plano de internet</div>
+          <div class="phone-desc">Contratação de internet empresarial</div>
+        </div>
+        <a href="tel:0800770851" class="phone-button">📞 0800 770 851</a>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- Atendimento ao Cliente -->
+    <section class="content-section">
+      <h2>Atendimento ao cliente</h2>
+      
+      <div class="phone-number">
+        <div class="phone-info">
+          <div class="phone-label">Plano de celular</div>
+          <div class="phone-desc">Suporte para clientes móveis</div>
         </div>
         <a href="tel:8486" class="phone-button">📞 *8486</a>
       </div>
       
       <div class="phone-number">
         <div class="phone-info">
-          <div class="phone-label">Vivo Móvel (de qualquer telefone)</div>
-          <div class="phone-desc">Atendimento ao cliente 24h</div>
+          <div class="phone-label">Internet, tv e telefone</div>
+          <div class="phone-desc">Suporte para serviços residenciais</div>
         </div>
-        <a href="tel:1058" class="phone-button">📞 1058</a>
+        <a href="tel:10315" class="phone-button">📞 10315</a>
       </div>
-      
-      <div class="phone-number">
-        <div class="phone-info">
-          <div class="phone-label">Vivo Fixo, Banda Larga e TV</div>
-          <div class="phone-desc">Suporte técnico especializado</div>
-        </div>
-        <a href="tel:10315" class="phone-button">📞 103 15</a>
-      </div>
-      
-      <div class="phone-number">
-        <div class="phone-info">
-          <div class="phone-label">Central de Relacionamento Vivo</div>
-          <div class="phone-desc">Atendimento geral e informações</div>
-        </div>
-        <a href="tel:1058" class="phone-button">📞 1058</a>
-      </div>
-      
-      <p><strong>Esses números estão disponíveis todos os dias, em horário estendido, e alguns funcionam 24 horas.</strong></p>
     </section>
 
     <hr class="divider">
 
-    <!-- Technical Support -->
+    <!-- Ouvidoria -->
     <section class="content-section">
-      <h2>Telefones da Vivo para Suporte Técnico</h2>
-      <p>Se a sua internet está lenta, a TV não funciona ou o celular apresenta falhas, a Vivo possui canais diretos de suporte:</p>
+      <h2>Ouvidoria</h2>
       
       <div class="phone-number">
         <div class="phone-info">
-          <div class="phone-label">Suporte Vivo Fixo, Internet e TV</div>
-          <div class="phone-desc">Problemas com serviços residenciais</div>
+          <div class="phone-label">Ouvidoria Vivo</div>
+          <div class="phone-desc">Reclamações não resolvidas</div>
         </div>
-        <a href="tel:10315" class="phone-button">📞 103 15</a>
+        <a href="tel:08007751212" class="phone-button">📞 0800 775 1212</a>
       </div>
-      
-      <div class="phone-number">
-        <div class="phone-info">
-          <div class="phone-label">Suporte Vivo Celular</div>
-          <div class="phone-desc">Problemas com sinal e serviços móveis</div>
-        </div>
-        <a href="tel:1058" class="phone-button">📞 1058</a>
-      </div>
-      
-      <p><strong>Tenha em mãos o CPF do titular ou o CNPJ da empresa contratante, pois essa informação pode ser solicitada no atendimento.</strong></p>
     </section>
 
     <hr class="divider">
 
-    <!-- Sales -->
+    <!-- Exterior -->
     <section class="content-section">
-      <h2>Telefones da Vivo para Contratar Planos</h2>
-      <p>Para quem ainda não é cliente ou deseja conhecer novas ofertas, a Vivo também disponibiliza números exclusivos de vendas:</p>
-      
-      <div class="phone-number">
-        <div class="phone-info">
-          <div class="phone-label">Contratação de planos Vivo</div>
-          <div class="phone-desc">Móvel, internet e TV - novos clientes</div>
-        </div>
-        <a href="tel:08007709800" class="phone-button">📞 0800 770 9800</a>
-      </div>
-      
-      <div class="phone-number">
-        <div class="phone-info">
-          <div class="phone-label">Atendimento a empresas</div>
-          <div class="phone-desc">Soluções corporativas e empresariais</div>
-        </div>
-        <a href="tel:08007705800" class="phone-button">📞 0800 770 5800</a>
-      </div>
-      
-      <p><strong>Nesses canais você pode consultar planos, comparar preços e realizar a contratação rapidamente.</strong></p>
-    </section>
-
-    <hr class="divider">
-
-    <!-- International -->
-    <section class="content-section">
-      <h2>Atendimento Vivo no Exterior</h2>
-      <p>Se estiver fora do Brasil e precisar falar com a operadora, basta ligar para:</p>
+      <h2>Exterior</h2>
       
       <div class="phone-number">
         <div class="phone-info">
           <div class="phone-label">Do exterior para o Brasil</div>
-          <div class="phone-desc">Ligação a cobrar - 24h</div>
+          <div class="phone-desc">Atendimento internacional</div>
         </div>
-        <a href="tel:+551130568628" class="phone-button">📞 +55 11 3056-8628</a>
+        <a href="tel:+551130568628" class="phone-button">📞 +55 11 30568628</a>
       </div>
-      
-      <p><strong>Esse canal garante que você consiga resolver pendências mesmo em viagem.</strong></p>
     </section>
 
     <hr class="divider">
@@ -432,7 +452,6 @@
       
       <ul>
         <li><strong>Aplicativo Meu Vivo</strong> (disponível para Android e iOS) - Para consultas rápidas e mudanças de plano</li>
-        <li><strong>WhatsApp Vivo</strong>: (11) 99915-1515 - Atendimento via mensagem</li>
         <li><strong>Site oficial</strong>: <a href="https://www.vivo.com.br" target="_blank" rel="noopener">www.vivo.com.br</a> - Portal completo de serviços</li>
       </ul>
       
