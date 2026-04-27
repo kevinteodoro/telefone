@@ -420,18 +420,24 @@
       overflow: hidden;
     }
     
-    .faq-question {
+    .faq-item summary {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
       background: var(--muted);
       padding: 1rem;
       cursor: pointer;
       font-weight: 600;
       color: var(--operator-vivo-primary);
-      border: none;
-      width: 100%;
-      text-align: left;
       font-size: 1rem;
+      list-style: none;
+      line-height: 1.4;
     }
-    
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: "+"; font-size: 1.2rem; flex-shrink: 0; }
+    .faq-item[open] > summary::after { content: "−"; }
+
     .faq-answer {
       padding: 1rem;
       background: white;
@@ -774,42 +780,62 @@
     <!-- FAQ -->
     <section id="faq" class="faq-section">
       <h2>Perguntas Frequentes sobre o Telefone da Vivo</h2>
-      
-      <div class="faq-item">
-        <button class="faq-question" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'none' ? 'block' : 'none'">
-          Como falar com atendente humano da Vivo?
-        </button>
-        <div class="faq-answer" style="display: none;">
-          Para falar com um atendente humano, ligue para *8486 (celular) ou 10315 (fixo/internet/TV). Durante a ligação, você pode pressionar 0 repetidamente ou dizer "atendente humano" para ser direcionado a uma pessoa.
+
+      <details class="faq-item">
+        <summary>Como falar com atendente humano da Vivo?</summary>
+        <div class="faq-answer">
+          Ligue para <strong>*8486</strong> (celular Vivo) ou <strong>10315</strong> (fixo/internet/TV). Durante a ligação, pressione 0 repetidamente ou diga "atendente humano" para ser direcionado a uma pessoa.
         </div>
-      </div>
-      
-      <div class="faq-item">
-        <button class="faq-question" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'none' ? 'block' : 'none'">
-          Qual é o WhatsApp da Vivo?
-        </button>
-        <div class="faq-answer" style="display: none;">
-          O WhatsApp da Vivo é o número 11 99915-1515. Você pode usar este canal para atendimento digital, suporte técnico e informações sobre planos e serviços.
+      </details>
+
+      <details class="faq-item">
+        <summary>Qual é o WhatsApp da Vivo?</summary>
+        <div class="faq-answer">
+          O WhatsApp da Vivo é o <strong>(11) 99915-1515</strong>. Use este canal para atendimento digital, suporte técnico e informações sobre planos, disponível 24 horas por dia.
         </div>
-      </div>
-      
-      <div class="faq-item">
-        <button class="faq-question" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'none' ? 'block' : 'none'">
-          A ligação para *8486 tem custo?
-        </button>
-        <div class="faq-answer" style="display: none;">
-          Para clientes Vivo, a ligação para *8486 geralmente é gratuita. Para clientes de outras operadoras, podem ser cobradas tarifas de interconexão. Consulte sua operadora para confirmar os custos.
+      </details>
+
+      <details class="faq-item">
+        <summary>A ligação para *8486 tem custo?</summary>
+        <div class="faq-answer">
+          Para clientes Vivo, a ligação para *8486 é gratuita. Para clientes de outras operadoras podem ser cobradas tarifas de interconexão. Use o <strong>0800 775 1212</strong> (gratuito de qualquer operadora) para evitar custos.
         </div>
-      </div>
-      
-      <div class="faq-item">
-        <button class="faq-question" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'none' ? 'block' : 'none'">
-          Como falar na ouvidoria?
-        </button>
-        <div class="faq-answer" style="display: none;">
-          Para falar na ouvidoria da Vivo, ligue para 0800 775 1212. Este canal é destinado a reclamações que não foram resolvidas pelos canais de atendimento tradicionais. A ouvidoria funciona em horário comercial.
+      </details>
+
+      <details class="faq-item">
+        <summary>Como falar na ouvidoria da Vivo?</summary>
+        <div class="faq-answer">
+          A Ouvidoria Vivo atende pelo <strong>0800 775 1212</strong> (gratuito), de segunda a sábado, 8h às 20h. Este canal é para reclamações não resolvidas pelo SAC. Tenha o número de protocolo do atendimento anterior em mãos.
         </div>
-      </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Como cancelar serviço da Vivo por telefone?</summary>
+        <div class="faq-answer">
+          Ligue para <strong>*8486</strong> ou <strong>10315</strong> e solicite o cancelamento. Por lei, a Vivo tem até 5 dias úteis para processar o pedido. Exija o número de protocolo como comprovante. Também é possível cancelar pelo app Meu Vivo.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Como pegar a segunda via de fatura da Vivo?</summary>
+        <div class="faq-answer">
+          A 2ª via da fatura Vivo é obtida gratuitamente pelo <strong>app Meu Vivo</strong> (aba "Minhas Faturas"), pelo site vivo.com.br ou ligando para o <strong>10315</strong>. O boleto pode ser enviado por e-mail ou SMS.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Qual o número gratuito da Vivo de qualquer telefone?</summary>
+        <div class="faq-answer">
+          O número gratuito da Vivo é o <strong>0800 775 1212</strong>, que funciona de qualquer telefone fixo ou celular, inclusive de outras operadoras, sem custo algum. Atende de segunda a sábado, 8h às 20h.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Como verificar saldo ou franquia de dados da Vivo?</summary>
+        <div class="faq-answer">
+          Para verificar saldo ou franquia de dados, disque <strong>*8000#</strong> direto no celular (gratuito e instantâneo) ou acesse o <strong>app Meu Vivo</strong>. Pelo app também é possível comprar pacotes adicionais e acompanhar o consumo em tempo real.
+        </div>
+      </details>
     </section>
 
     <hr class="divider">
@@ -882,10 +908,42 @@
       },
       {
         "@type":"Question",
-        "name":"Como falar na ouvidoria?",
+        "name":"Como falar na ouvidoria da Vivo?",
         "acceptedAnswer":{
           "@type":"Answer",
-          "text":"Para falar na ouvidoria da Vivo, ligue para 0800 775 1212. Este canal é destinado a reclamações que não foram resolvidas pelos canais de atendimento tradicionais. A ouvidoria funciona em horário comercial."
+          "text":"A Ouvidoria Vivo atende pelo 0800 775 1212 (gratuito), de segunda a sábado, 8h às 20h. É necessário ter o protocolo de um atendimento anterior no SAC que não foi resolvido."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Como cancelar serviço da Vivo por telefone?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Ligue para *8486 ou 10315 e solicite o cancelamento. Por lei, a Vivo tem até 5 dias úteis para processar o pedido. Exija o número de protocolo como comprovante."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Como pegar a segunda via de fatura da Vivo?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"A 2ª via da fatura Vivo é obtida gratuitamente pelo app Meu Vivo (aba Minhas Faturas), pelo site vivo.com.br ou ligando para o 10315. O boleto pode ser enviado por e-mail ou SMS."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Qual o número gratuito da Vivo de qualquer telefone?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"O número gratuito da Vivo é o 0800 775 1212, que funciona de qualquer telefone fixo ou celular, inclusive de outras operadoras, sem custo. Atende de segunda a sábado, 8h às 20h."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Como verificar saldo ou franquia de dados da Vivo?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Disque *8000# direto no celular (gratuito e instantâneo) ou acesse o app Meu Vivo para verificar saldo ou franquia. Pelo app também é possível comprar pacotes adicionais de dados."
         }
       }
     ]

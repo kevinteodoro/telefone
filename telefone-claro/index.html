@@ -445,18 +445,24 @@
       overflow: hidden;
     }
     
-    .faq-question {
+    .faq-item summary {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
       background: var(--muted);
       padding: 1rem;
       cursor: pointer;
       font-weight: 600;
       color: var(--operator-claro-primary);
-      border: none;
-      width: 100%;
-      text-align: left;
       font-size: 1rem;
+      list-style: none;
+      line-height: 1.4;
     }
-    
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: "+"; font-size: 1.2rem; flex-shrink: 0; }
+    .faq-item[open] > summary::after { content: "−"; }
+
     .faq-answer {
       padding: 1rem;
       background: white;
@@ -808,6 +814,7 @@
       </ul>
       
       <p><strong>Esses canais permitem consultar a conta, ativar ou trocar planos, solicitar segunda via de fatura e até agendar suporte técnico.</strong></p>
+      <p>Para um guia detalhado sobre o SAC Claro, com tabela completa de números, passo a passo para cancelamento e segunda via, veja: <a href="/telefone-claro-sac/">Telefone SAC Claro: todos os canais de atendimento →</a></p>
     </section>
 
     <hr class="divider">
@@ -815,42 +822,62 @@
     <!-- FAQ -->
     <section id="faq" class="faq-section">
       <h2>Perguntas Frequentes sobre o Telefone da Claro</h2>
-      
-      <div class="faq-item">
-        <button class="faq-question" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'none' ? 'block' : 'none'">
-          Como falar com atendente humano da Claro?
-        </button>
-        <div class="faq-answer" style="display: none;">
-          Para falar com um atendente humano, ligue para 1052 (celular) ou 10621 (NET). Durante a ligação, você pode pressionar 0 repetidamente ou dizer "atendente humano" para ser direcionado a uma pessoa.
+
+      <details class="faq-item">
+        <summary>Como falar com atendente humano da Claro?</summary>
+        <div class="faq-answer">
+          Ligue para <strong>1052</strong> (celular Claro) ou <strong>10621</strong> (Claro NET). Durante a ligação, pressione 0 repetidamente ou diga "atendente humano" para ser direcionado a uma pessoa.
         </div>
-      </div>
-      
-      <div class="faq-item">
-        <button class="faq-question" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'none' ? 'block' : 'none'">
-          Qual é o WhatsApp da Claro?
-        </button>
-        <div class="faq-answer" style="display: none;">
-          O WhatsApp da Claro é o número 11 99991-0621. Você pode usar este canal para atendimento digital, suporte técnico e informações sobre planos e serviços.
+      </details>
+
+      <details class="faq-item">
+        <summary>Qual é o WhatsApp da Claro?</summary>
+        <div class="faq-answer">
+          O WhatsApp da Claro é o <strong>(11) 99991-0621</strong>. Use este canal para atendimento digital, suporte técnico e informações sobre planos, disponível 24 horas por dia.
         </div>
-      </div>
-      
-      <div class="faq-item">
-        <button class="faq-question" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'none' ? 'block' : 'none'">
-          A ligação para 1052 tem custo?
-        </button>
-        <div class="faq-answer" style="display: none;">
-          Para clientes Claro, a ligação para 1052 geralmente é gratuita. Para clientes de outras operadoras, podem ser cobradas tarifas de interconexão. Consulte sua operadora para confirmar os custos.
+      </details>
+
+      <details class="faq-item">
+        <summary>A ligação para 1052 tem custo?</summary>
+        <div class="faq-answer">
+          Para clientes Claro, a ligação para 1052 é gratuita. Para clientes de outras operadoras podem ser cobradas tarifas de interconexão. Use o <strong>0800 701 0180</strong> (gratuito de qualquer operadora) para evitar custos.
         </div>
-      </div>
-      
-      <div class="faq-item">
-        <button class="faq-question" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'none' ? 'block' : 'none'">
-          Como falar na ouvidoria?
-        </button>
-        <div class="faq-answer" style="display: none;">
-          Para falar na ouvidoria da Claro, ligue para 0800 701 0180. Este canal é destinado a reclamações que não foram resolvidas pelos canais de atendimento tradicionais. A ouvidoria funciona em horário comercial.
+      </details>
+
+      <details class="faq-item">
+        <summary>Como falar na ouvidoria da Claro?</summary>
+        <div class="faq-answer">
+          A Ouvidoria Claro atende pelo <strong>0800 701 0180</strong> (gratuito), de segunda a sábado, 8h às 22h. Este canal é para reclamações não resolvidas pelo SAC. Tenha o número de protocolo do atendimento anterior em mãos.
         </div>
-      </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Como cancelar serviço da Claro por telefone?</summary>
+        <div class="faq-answer">
+          Ligue para <strong>1052</strong> e solicite o cancelamento. Por lei, a Claro tem até 5 dias úteis para processar o pedido. Exija o número de protocolo como comprovante. Também é possível cancelar pelo app Minha Claro ou chat no site.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Como pegar a segunda via de fatura da Claro?</summary>
+        <div class="faq-answer">
+          A 2ª via da fatura Claro é obtida gratuitamente pelo <strong>app Minha Claro</strong> (aba "Minhas Faturas"), pelo site claro.com.br ou ligando para o <strong>1052</strong>. O boleto pode ser enviado por e-mail ou SMS.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Qual o número da Claro para internet residencial (Claro NET)?</summary>
+        <div class="faq-answer">
+          Para serviços Claro NET residenciais (fibra, TV e telefone fixo), ligue para <strong>0800 722 0012</strong> (gratuito, 24h) ou disque <strong>10621</strong>. Para empresas, use o <strong>0800 722 0015</strong>.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>O que fazer se o SAC da Claro não resolver meu problema?</summary>
+        <div class="faq-answer">
+          Acione a <strong>Ouvidoria Claro</strong> pelo 0800 701 0180 com o protocolo do SAC. Se ainda sem solução, registre reclamação no <strong>consumidor.gov.br</strong> (resposta em 10 dias) ou na <strong>Anatel pelo 1331</strong> (gratuito, seg–sex 8h–20h).
+        </div>
+      </details>
     </section>
 
     <hr class="divider">
@@ -902,7 +929,7 @@
         "name":"Como falar com atendente humano da Claro?",
         "acceptedAnswer":{
           "@type":"Answer",
-          "text":"Para falar com um atendente humano, ligue para 1052 (celular) ou 10621 (NET). Durante a ligação, você pode pressionar 0 repetidamente ou dizer 'atendente humano' para ser direcionado a uma pessoa."
+          "text":"Ligue para 1052 (celular Claro) ou 10621 (Claro NET). Durante a ligação, pressione 0 repetidamente ou diga 'atendente humano' para ser direcionado a uma pessoa."
         }
       },
       {
@@ -923,10 +950,42 @@
       },
       {
         "@type":"Question",
-        "name":"Como falar na ouvidoria?",
+        "name":"Como falar na ouvidoria da Claro?",
         "acceptedAnswer":{
           "@type":"Answer",
-          "text":"Para falar na ouvidoria da Claro, ligue para 0800 701 0180. Este canal é destinado a reclamações que não foram resolvidas pelos canais de atendimento tradicionais. A ouvidoria funciona em horário comercial."
+          "text":"A Ouvidoria Claro atende pelo 0800 701 0180 (gratuito), de segunda a sábado, 8h às 22h. É necessário ter o protocolo de um atendimento anterior no SAC que não foi resolvido."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Como cancelar serviço da Claro por telefone?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Ligue para 1052 e solicite o cancelamento. Por lei, a Claro tem até 5 dias úteis para processar o pedido. Exija o número de protocolo como comprovante."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Como pegar a segunda via de fatura da Claro?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"A 2ª via da fatura Claro é obtida gratuitamente pelo app Minha Claro (aba Minhas Faturas), pelo site claro.com.br ou ligando para o 1052. O boleto pode ser enviado por e-mail ou SMS."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Qual o número da Claro para internet residencial Claro NET?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Para serviços Claro NET residenciais (fibra, TV e telefone fixo), ligue para 0800 722 0012 (gratuito, 24h) ou disque 10621. Para empresas, use o 0800 722 0015."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"O que fazer se o SAC da Claro não resolver meu problema?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Acione a Ouvidoria Claro pelo 0800 701 0180 com o protocolo do SAC. Se ainda sem solução, registre reclamação no consumidor.gov.br (resposta em 10 dias) ou na Anatel pelo 1331 (gratuito, seg–sex 8h–20h)."
         }
       }
     ]

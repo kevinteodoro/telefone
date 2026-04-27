@@ -446,18 +446,24 @@
       overflow: hidden;
     }
     
-    .faq-question {
+    .faq-item summary {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
       background: var(--muted);
       padding: 1rem;
       cursor: pointer;
       font-weight: 600;
       color: var(--operator-tim-primary);
-      border: none;
-      width: 100%;
-      text-align: left;
       font-size: 1rem;
+      list-style: none;
+      line-height: 1.4;
     }
-    
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: "+"; font-size: 1.2rem; flex-shrink: 0; }
+    .faq-item[open] > summary::after { content: "−"; }
+
     .faq-answer {
       padding: 1rem;
       background: white;
@@ -779,6 +785,7 @@
       </ul>
       
       <p><strong>Esses canais permitem consultar a conta, ativar ou trocar planos, solicitar segunda via de fatura e até agendar suporte técnico.</strong></p>
+      <p>Para um guia detalhado sobre o SAC TIM, com passo a passo para cancelamento, segunda via e ouvidoria, veja: <a href="/telefone-tim-sac/">SAC TIM: telefone e todos os canais de atendimento →</a></p>
     </section>
 
     <hr class="divider">
@@ -786,42 +793,62 @@
     <!-- FAQ -->
     <section id="faq" class="faq-section">
       <h2>Perguntas Frequentes sobre o Telefone da TIM</h2>
-      
-      <div class="faq-item">
-        <button class="faq-question" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'none' ? 'block' : 'none'">
-          Como falar com atendente humano da TIM?
-        </button>
-        <div class="faq-answer" style="display: none;">
-          Para falar com um atendente humano, ligue para *144 (celular TIM) ou 1056 (qualquer telefone). Para TIM Live, ligue 103 41. Durante a ligação, você pode pressionar 0 repetidamente ou dizer "atendente humano" para ser direcionado a uma pessoa.
+
+      <details class="faq-item">
+        <summary>Como falar com atendente humano da TIM?</summary>
+        <div class="faq-answer">
+          Ligue para <strong>*144</strong> (celular TIM) ou <strong>1056</strong> (qualquer telefone). Para TIM Live, ligue <strong>103 41</strong>. Durante a ligação, pressione 0 ou diga "atendente humano" para ser direcionado a uma pessoa.
         </div>
-      </div>
-      
-      <div class="faq-item">
-        <button class="faq-question" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'none' ? 'block' : 'none'">
-          Qual é o WhatsApp da TIM?
-        </button>
-        <div class="faq-answer" style="display: none;">
-          O WhatsApp da TIM é o número (41) 4141-4141. Você pode usar este canal para atendimento digital, suporte técnico e informações sobre planos e serviços.
+      </details>
+
+      <details class="faq-item">
+        <summary>Qual é o WhatsApp da TIM?</summary>
+        <div class="faq-answer">
+          O WhatsApp da TIM é o <strong>(41) 4141-4141</strong>. Use este canal para atendimento digital, suporte técnico e informações sobre planos, disponível 24 horas por dia.
         </div>
-      </div>
-      
-      <div class="faq-item">
-        <button class="faq-question" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'none' ? 'block' : 'none'">
-          A ligação para *144 tem custo?
-        </button>
-        <div class="faq-answer" style="display: none;">
-          Para clientes TIM, a ligação para *144 geralmente é gratuita. Para clientes de outras operadoras, podem ser cobradas tarifas de interconexão. Consulte sua operadora para confirmar os custos.
+      </details>
+
+      <details class="faq-item">
+        <summary>A ligação para *144 tem custo?</summary>
+        <div class="faq-answer">
+          Para clientes TIM, a ligação para *144 é gratuita. Para clientes de outras operadoras podem ser cobradas tarifas de interconexão. Use o <strong>0800 041 0610</strong> (gratuito de qualquer operadora) para evitar custos.
         </div>
-      </div>
-      
-      <div class="faq-item">
-        <button class="faq-question" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'none' ? 'block' : 'none'">
-          Como falar na ouvidoria?
-        </button>
-        <div class="faq-answer" style="display: none;">
-          Para falar na ouvidoria da TIM, ligue para 0800 882 0041. Este canal é destinado a reclamações que não foram resolvidas pelos canais de atendimento tradicionais. A ouvidoria funciona em horário comercial.
+      </details>
+
+      <details class="faq-item">
+        <summary>Como falar na ouvidoria da TIM?</summary>
+        <div class="faq-answer">
+          A Ouvidoria TIM atende pelo <strong>0800 882 0041</strong> (gratuito), de segunda a sábado, 8h às 20h. Este canal é para reclamações não resolvidas pelo SAC. Tenha o número de protocolo do atendimento anterior em mãos.
         </div>
-      </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Como cancelar serviço da TIM por telefone?</summary>
+        <div class="faq-answer">
+          Ligue para <strong>1056</strong> e solicite o cancelamento. Por lei, a TIM tem até 5 dias úteis para processar o pedido. Exija o número de protocolo como comprovante. Também é possível cancelar pelo app Meu TIM ou chat no site.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Como pegar a segunda via de fatura da TIM?</summary>
+        <div class="faq-answer">
+          A 2ª via da fatura TIM é obtida gratuitamente pelo <strong>app Meu TIM</strong> (aba "Minhas Faturas"), pelo site tim.com.br ou ligando para <strong>1056</strong>. O boleto pode ser enviado por e-mail ou SMS.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Qual o número gratuito da TIM de qualquer telefone?</summary>
+        <div class="faq-answer">
+          O número gratuito da TIM é o <strong>0800 041 0610</strong>, que funciona de qualquer telefone fixo ou celular, inclusive de outras operadoras. Para clientes TIM, use o <strong>*144</strong> diretamente no celular.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Como funciona o TIM Live (internet residencial)?</summary>
+        <div class="faq-answer">
+          O TIM Live é o serviço de internet fibra residencial da TIM. Para contratar, tirar dúvidas ou solicitar suporte técnico, ligue para <strong>103 41</strong> (de qualquer telefone) ou acesse o site timlive.com.br.
+        </div>
+      </details>
     </section>
 
     <hr class="divider">
@@ -894,10 +921,42 @@
       },
       {
         "@type":"Question",
-        "name":"Como falar na ouvidoria?",
+        "name":"Como falar na ouvidoria da TIM?",
         "acceptedAnswer":{
           "@type":"Answer",
-          "text":"Para falar na ouvidoria da TIM, ligue para 0800 882 0041. Este canal é destinado a reclamações que não foram resolvidas pelos canais de atendimento tradicionais. A ouvidoria funciona em horário comercial."
+          "text":"A Ouvidoria TIM atende pelo 0800 882 0041 (gratuito), de segunda a sábado, 8h às 20h. É necessário ter o protocolo de um atendimento anterior no SAC que não foi resolvido."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Como cancelar serviço da TIM por telefone?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Ligue para 1056 e solicite o cancelamento. Por lei, a TIM tem até 5 dias úteis para processar o pedido. Exija o número de protocolo como comprovante."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Como pegar a segunda via de fatura da TIM?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"A 2ª via da fatura TIM é obtida gratuitamente pelo app Meu TIM (aba Minhas Faturas), pelo site tim.com.br ou ligando para 1056. O boleto pode ser enviado por e-mail ou SMS."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Qual o número gratuito da TIM de qualquer telefone?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"O número gratuito da TIM é o 0800 041 0610, que funciona de qualquer telefone fixo ou celular, inclusive de outras operadoras. Para clientes TIM, use o *144 diretamente no celular."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Como funciona o TIM Live internet residencial?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"O TIM Live é o serviço de internet fibra residencial da TIM. Para contratar, tirar dúvidas ou solicitar suporte técnico, ligue para 103 41 de qualquer telefone ou acesse o site timlive.com.br."
         }
       }
     ]
