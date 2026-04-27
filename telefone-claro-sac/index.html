@@ -112,8 +112,6 @@
     .ops-grid{display:flex;flex-wrap:wrap;gap:10px}
     .op-link{display:inline-flex;align-items:center;gap:6px;padding:10px 16px;border:1px solid var(--gray-border);border-radius:var(--radius);background:#fff;color:var(--text);text-decoration:none;font-size:.9rem;font-weight:500;min-height:44px;transition:border-color .2s,background .2s}
     .op-link:hover,.op-link:focus{border-color:var(--red);background:#fef0f2;color:var(--red);text-decoration:none}
-    /* Adsense placeholder */
-    .ad-wrap{text-align:center;margin:24px 0;min-height:90px}
     /* Footer */
     .site-footer{background:#222;color:#ccc;padding:28px 0;margin-top:40px;font-size:.88rem}
     .footer-links{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:16px}
@@ -231,9 +229,6 @@
   }
   </script>
 
-  <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7989576624887637" crossorigin="anonymous"></script>
-
   <link rel="preload" href="/assets/css/styles.min.css" as="style" />
   <link rel="stylesheet" href="/assets/css/styles.min.css" />
 </head>
@@ -274,16 +269,6 @@
   </section>
 
   <main class="wrap" role="main" id="conteudo-principal">
-
-    <!-- Ad slot topo -->
-    <div class="ad-wrap" aria-label="Publicidade">
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-7989576624887637"
-           data-ad-slot="auto"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-    </div>
 
     <!-- Cards canais de atendimento -->
     <section class="section" aria-labelledby="canais-titulo">
@@ -378,16 +363,6 @@
         <strong>Dica:</strong> Sempre anote o <strong>número de protocolo</strong> ao final de cada atendimento. Ele é obrigatório por lei e serve como comprovante da solicitação.
       </div>
     </section>
-
-    <!-- Ad slot meio -->
-    <div class="ad-wrap" aria-label="Publicidade">
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-7989576624887637"
-           data-ad-slot="auto"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-    </div>
 
     <!-- Cancelamento -->
     <section class="section" aria-labelledby="cancelamento-titulo">
@@ -538,16 +513,6 @@
       </details>
     </section>
 
-    <!-- Ad slot rodapé do conteúdo -->
-    <div class="ad-wrap" aria-label="Publicidade">
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-7989576624887637"
-           data-ad-slot="auto"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-    </div>
-
     <!-- Links internos / outras operadoras -->
     <aside class="other-ops" aria-labelledby="ops-titulo">
       <h2 id="ops-titulo">Telefones de Outras Operadoras</h2>
@@ -594,9 +559,6 @@
 
   <script defer>
     document.getElementById('year').textContent = new Date().getFullYear();
-    (adsbygoogle = window.adsbygoogle || []).push({});
-    (adsbygoogle = window.adsbygoogle || []).push({});
-    (adsbygoogle = window.adsbygoogle || []).push({});
   </script>
 </body>
 </html>
