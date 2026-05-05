@@ -492,6 +492,12 @@
         grid-template-columns: 1fr;
       }
     }
+  
+    #paginas-relacionadas { margin-bottom: 2rem; }
+    #paginas-relacionadas h2 { font-size: 1.2rem; font-weight: 700; margin-bottom: 1rem; }
+    #paginas-relacionadas ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    #paginas-relacionadas ul li a { display: inline-block; padding: 0.5rem 1rem; background: var(--primary, #555); color: #fff; border-radius: 6px; text-decoration: none; font-size: 0.9rem; }
+    #paginas-relacionadas ul li a:hover { opacity: 0.85; }
   </style>
 
   <!-- JSON-LD -->
@@ -893,6 +899,15 @@
     <div class="back-home">
       <a href="/">← Voltar para Página Inicial</a>
     </div>
+
+    <section id="paginas-relacionadas" class="content-section">
+      <h2>Páginas Relacionadas</h2>
+      <ul>
+        <li><a href="/telefone-claro-sac/">SAC Claro</a></li>
+        <li><a href="/ouvidoria-claro/">Ouvidoria Claro</a></li>
+      </ul>
+    </section>
+
   </main>
 
   <footer class="container" style="padding: 2rem 0; text-align: center; color: var(--muted-foreground); border-top: 1px solid var(--border);">
