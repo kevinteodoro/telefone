@@ -203,3 +203,38 @@
   </script>
 </body>
 </html>
+```
+
+## Arquitetura atual e requisitos do Google AdSense (revisão de jun/2026)
+
+Após 2 reprovações no AdSense, o site foi reestruturado. Regras que passam a valer:
+
+### 1. Uma página por entidade real (evitar *scaled content abuse*)
+- **Não criar** múltiplas páginas quase idênticas variando só o nome/subserviço da mesma marca (ex.: `telefone-claro`, `telefone-claro-fibra`, `telefone-claro-sac`, `ouvidoria-claro`...). Isso é conteúdo em massa e reprova no AdSense.
+- Cada marca/entidade tem **uma única página abrangente** cobrindo todos os canais (SAC, ouvidoria, fibra, residencial, móvel, empresas) em seções internas.
+- Slugs aposentados viram **stub de redirect** (não entram no `sitemap.xml`): `<link rel="canonical">` para a página nova + `<meta http-equiv="refresh" content="0; url=/pagina-nova/">` + `<meta name="robots" content="noindex, follow">` + redirect JS. Sem GTM/AdSense nos stubs.
+
+### 2. Páginas obrigatórias (exigidas pelo AdSense)
+- `/politica-de-privacidade/` — **obrigatória**; divulga cookies do Google AdSense/DoubleClick, GTM e terceiros, com links de opt-out.
+- `/contato/` — canal real de contato do site.
+- `/termos-de-uso/` — disclaimer de site independente, sem afiliação, dados sujeitos a alteração.
+- Todas devem estar linkadas no footer `.site-map-nav` de **todas** as páginas.
+
+### 3. AdSense e footer (obrigatórios em toda página de conteúdo)
+- Snippet do AdSense `ca-pub-7989576624887637` logo após o GTM no `<head>`.
+- Footer global `.site-map-nav` idêntico em todas as páginas + disclaimer honesto antes dele.
+- `ads.txt` na raiz: `google.com, pub-7989576624887637, DIRECT, f08c47fec0942fa0`.
+
+### 4. Confiabilidade / E-E-A-T honesto (não inventar autoridade)
+- **Nunca** afirmar processo de verificação que não existe (ex.: "conferimos mensalmente", "verificado na base X") nem inserir data de verificação falsa.
+- **Não** fabricar métricas (estrelas de "eficácia", "tempo médio: imediato"). Usar só prazos qualitativos plausíveis ou nada.
+- Cada número deve ter disclaimer "sujeito a alteração — confira na fonte oficial" e link para o canal oficial da empresa.
+- **ANATEL** só é canal de consumo para **telecomunicações** (Claro/TIM/Oi/Vivo/NET/SKY). Para os demais: `consumidor.gov.br` (Senacon) + Procon + Reclame Aqui; **bancos** → Banco Central (bcb.gov.br/meubc); **órgãos públicos** → Ouvidoria + Fala.BR (falabr.cgu.gov.br).
+
+### 5. Links internos
+- Nenhum link para slug inexistente. "Páginas Relacionadas" deve apontar só para páginas reais existentes.
+
+### Estrutura de páginas (após consolidação)
+- **21 páginas de conteúdo** (entidades distintas): Claro, TIM, Oi, Vivo, NET, SKY, Netflix; Nubank, Bradesco, Santander, Itaú, Caixa, Banco Inter; Amazon, Mercado Livre, Magazine Luiza, Jadlog, Total Express, Correios; INSS, Receita Federal.
+- **+ home + 4 institucionais** (sobre, contato, política de privacidade, termos de uso) = 26 URLs no `sitemap.xml`.
+- **+ 21 stubs de redirect** (fora do sitemap).
