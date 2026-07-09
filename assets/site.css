@@ -57,7 +57,7 @@
 }
 
 /* Operadoras — mesmas cores da home */
-body.op-vivo  { --op: #ff6600; --op-ink: #ff6600; --op-dark: #e55a00; --op-tint: #fff7ed; }
+body.op-vivo  { --op: #660099; --op-ink: #660099; --op-dark: #4d0073; --op-tint: #f5eefb; }
 body.op-claro { --op: #e60000; --op-ink: #e60000; --op-dark: #c40000; --op-tint: #fff1f1; }
 body.op-tim   { --op: #0000cc; --op-ink: #0000cc; --op-dark: #0000a0; --op-tint: #eef0ff; }
 body.op-oi    { --op: #ffcc00; --op-ink: #a16207; --op-dark: #eab308; --op-tint: #fefce8; }
