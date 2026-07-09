@@ -155,374 +155,49 @@
   }
   </script>
 
-  <style>
-    :root {
-      --primary: #0033a0;
-      --primary-dark: #001e5a;
-      --primary-light: #eef2ff;
-      --accent: #00a859;
-      --accent-dark: #007a40;
-      --whatsapp: #25D366;
-      --whatsapp-dark: #128C7E;
-      --border: #e2e8f0;
-      --muted: #f1f5f9;
-      --muted-fg: #64748b;
-      --fg: #0f172a;
-      --bg: #ffffff;
-      --card: #ffffff;
-      --danger: #ef4444;
-      --warning-bg: #fffbeb;
-      --warning-border: #f59e0b;
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      color: var(--fg);
-      background: var(--bg);
-      line-height: 1.6;
-    }
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; height: auto; }
+  <!-- Fonte de display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&display=swap" rel="stylesheet" />
 
-    .container { max-width: 860px; margin: 0 auto; padding: 0 1rem; }
-
-    /* ── HEADER ── */
-    .page-header {
-      background: linear-gradient(135deg, #0033a0 0%, #001e5a 100%);
-      color: #fff;
-      padding: 3rem 0 2.5rem;
-      text-align: center;
-      position: relative;
-    }
-    .back-button {
-      position: absolute;
-      top: 1rem; left: 1rem;
-      background: rgba(255,255,255,.15);
-      color: #fff;
-      border: 1px solid rgba(255,255,255,.3);
-      padding: .4rem .9rem;
-      border-radius: 6px;
-      font-size: .85rem;
-      transition: background .2s;
-    }
-    .back-button:hover { background: rgba(255,255,255,.25); }
-    .page-header h1 { font-size: 2rem; font-weight: 800; line-height: 1.25; margin-bottom: .75rem; }
-    .page-header .subtitle { font-size: 1.05rem; opacity: .9; max-width: 640px; margin: 0 auto; }
-    .badge-updated {
-      display: inline-flex; align-items: center; gap: .4rem;
-      background: rgba(255,255,255,.2);
-      padding: .4rem .9rem;
-      border-radius: 9999px;
-      font-size: .8rem;
-      font-weight: 600;
-      margin-top: 1rem;
-      color: #fff;
-    }
-
-    /* ── BREADCRUMB ── */
-    .breadcrumb { background: var(--muted); padding: .75rem 0; }
-    .breadcrumb ol { list-style: none; display: flex; gap: .4rem; align-items: center; flex-wrap: wrap; font-size: .9rem; }
-    .breadcrumb a { color: var(--primary); text-decoration: underline; }
-    .breadcrumb li:not(:first-child)::before { content: "›"; margin-right: .4rem; color: var(--muted-fg); }
-
-    /* ── QUICK CALL HERO ── */
-    .hero-cta {
-      background: var(--primary-light);
-      border: 2px solid var(--primary);
-      border-radius: 12px;
-      padding: 1.5rem;
-      margin: 1.5rem 0;
-      text-align: center;
-    }
-    .hero-cta p { font-size: .95rem; color: var(--muted-fg); margin-bottom: .75rem; }
-    .hero-cta .cta-buttons { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; }
-    .btn-primary {
-      background: var(--primary);
-      color: #fff;
-      padding: .75rem 1.4rem;
-      border-radius: 8px;
-      font-weight: 700;
-      font-size: 1rem;
-      display: inline-flex;
-      align-items: center;
-      gap: .5rem;
-      transition: background .2s, transform .15s;
-      text-decoration: none;
-    }
-    .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); }
-    .btn-whatsapp {
-      background: var(--whatsapp);
-      color: #fff;
-      padding: .75rem 1.4rem;
-      border-radius: 8px;
-      font-weight: 700;
-      font-size: 1rem;
-      display: inline-flex;
-      align-items: center;
-      gap: .5rem;
-      transition: background .2s, transform .15s;
-      text-decoration: none;
-    }
-    .btn-whatsapp:hover { background: var(--whatsapp-dark); transform: translateY(-2px); }
-    .btn-secondary {
-      background: var(--muted-fg);
-      color: #fff;
-      padding: .6rem 1rem;
-      border-radius: 6px;
-      font-weight: 600;
-      font-size: .85rem;
-      display: inline-flex;
-      align-items: center;
-      gap: .4rem;
-      transition: background .2s;
-      cursor: pointer;
-      border: none;
-      text-decoration: none;
-    }
-    .btn-secondary:hover { background: #475569; }
-
-    /* ── SUMMARY TABLE ── */
-    .summary-table {
-      width: 100%;
-      border-collapse: collapse;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 1px 4px rgba(0,0,0,.1);
-      margin: 1.5rem 0;
-      font-size: .95rem;
-    }
-    .summary-table thead th {
-      background: var(--primary);
-      color: #fff;
-      padding: .85rem 1rem;
-      text-align: left;
-      font-weight: 700;
-    }
-    .summary-table tbody td {
-      padding: .8rem 1rem;
-      border-bottom: 1px solid var(--border);
-      vertical-align: middle;
-    }
-    .summary-table tbody tr:nth-child(even) { background: var(--muted); }
-    .summary-table tbody tr:last-child td { border-bottom: none; }
-    .badge-24h {
-      display: inline-block;
-      background: #dcfce7;
-      color: #166534;
-      font-size: .72rem;
-      font-weight: 700;
-      padding: .15rem .45rem;
-      border-radius: 4px;
-      margin-left: .3rem;
-      white-space: nowrap;
-    }
-    .badge-hours {
-      display: inline-block;
-      background: #fef3c7;
-      color: #92400e;
-      font-size: .72rem;
-      font-weight: 700;
-      padding: .15rem .45rem;
-      border-radius: 4px;
-      margin-left: .3rem;
-      white-space: nowrap;
-    }
-    .tel-link { color: var(--primary); font-weight: 700; text-decoration: underline; }
-
-    /* ── NAV INDEX ── */
-    .nav-index {
-      background: var(--primary-light);
-      border-left: 4px solid var(--primary);
-      border-radius: 0 8px 8px 0;
-      padding: 1.2rem 1.4rem;
-      margin: 1.5rem 0;
-    }
-    .nav-index h3 { color: var(--primary); font-size: 1rem; margin-bottom: .7rem; font-weight: 700; }
-    .nav-index ul { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: .4rem; }
-    .nav-index a { color: var(--primary); text-decoration: underline; font-size: .9rem; display: block; padding: .2rem 0; }
-    .nav-index a:hover { text-decoration: none; }
-
-    /* ── CONTENT SECTIONS ── */
-    .content-section { margin-bottom: 2.5rem; }
-    .content-section h2 {
-      color: var(--primary);
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      padding-bottom: .4rem;
-      border-bottom: 2px solid var(--primary);
-    }
-    .content-section h3 {
-      color: var(--fg);
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin: 1.4rem 0 .6rem;
-    }
-    .content-section p { margin-bottom: .9rem; }
-    .content-section ul { padding-left: 1.4rem; margin-bottom: .9rem; }
-    .content-section li { margin-bottom: .4rem; }
-
-    /* ── PHONE CARDS ── */
-    .phone-card {
-      background: var(--primary-light);
-      border: 1px solid var(--primary);
-      border-radius: 10px;
-      padding: 1rem 1.2rem;
-      margin: .9rem 0;
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    .phone-card-info { flex: 1; min-width: 180px; }
-    .phone-card-label { font-weight: 700; color: var(--primary); font-size: 1rem; margin-bottom: .2rem; }
-    .phone-card-number { font-size: 1.3rem; font-weight: 800; color: var(--fg); margin-bottom: .2rem; }
-    .phone-card-desc { color: var(--muted-fg); font-size: .85rem; }
-    .phone-card-hours { font-size: .8rem; color: var(--muted-fg); margin-top: .3rem; }
-    .phone-card-actions { display: flex; gap: .5rem; flex-wrap: wrap; align-items: center; }
-
-    /* ── STEP LIST ── */
-    .step-list { list-style: none; padding: 0; counter-reset: steps; margin: .8rem 0; }
-    .step-list li {
-      counter-increment: steps;
-      display: flex;
-      gap: .8rem;
-      align-items: flex-start;
-      margin-bottom: .7rem;
-    }
-    .step-list li::before {
-      content: counter(steps);
-      background: var(--primary);
-      color: #fff;
-      border-radius: 50%;
-      width: 1.6rem;
-      height: 1.6rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: .8rem;
-      font-weight: 700;
-      flex-shrink: 0;
-      margin-top: .1rem;
-    }
-
-    /* ── INFO BOX ── */
-    .info-box {
-      background: var(--warning-bg);
-      border: 1px solid var(--warning-border);
-      border-radius: 8px;
-      padding: 1rem 1.2rem;
-      margin: 1rem 0;
-      font-size: .9rem;
-    }
-    .info-box strong { color: #92400e; }
-    .success-box {
-      background: #f0fdf4;
-      border: 1px solid #86efac;
-      border-radius: 8px;
-      padding: 1rem 1.2rem;
-      margin: 1rem 0;
-      font-size: .9rem;
-    }
-
-    /* ── CHANNEL GRID ── */
-    .channel-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin: 1rem 0; }
-    .channel-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1.1rem;
-      text-align: center;
-    }
-    .channel-card .channel-icon { font-size: 2rem; margin-bottom: .5rem; }
-    .channel-card h4 { font-size: 1rem; font-weight: 700; color: var(--primary); margin-bottom: .4rem; }
-    .channel-card p { font-size: .85rem; color: var(--muted-fg); margin-bottom: .6rem; }
-    .channel-card .badge-24h, .channel-card .badge-hours { display: block; margin: 0 auto .6rem; width: fit-content; }
-
-    /* ── FAQ ── */
-    .faq-section h2 { color: var(--primary); font-size: 1.5rem; font-weight: 700; margin-bottom: 1.2rem; padding-bottom: .4rem; border-bottom: 2px solid var(--primary); }
-    .faq-item { border: 1px solid var(--border); border-radius: 8px; margin-bottom: .75rem; overflow: hidden; }
-    .faq-item summary {
-      background: var(--muted);
-      padding: 1rem 1.1rem;
-      cursor: pointer;
-      font-weight: 600;
-      color: var(--primary);
-      font-size: .95rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: .75rem;
-      list-style: none;
-      line-height: 1.4;
-    }
-    .faq-item summary::-webkit-details-marker { display: none; }
-    .faq-item summary::after { content: "+"; font-size: 1.2rem; flex-shrink: 0; color: var(--primary); }
-    .faq-item[open] > summary::after { content: "−"; }
-    .faq-answer { padding: 1rem 1.1rem; background: #fff; font-size: .95rem; line-height: 1.6; }
-    .faq-answer strong { color: var(--primary); }
-
-    /* ── CONCLUSION ── */
-    .conclusion { background: var(--muted); border-radius: 12px; padding: 1.5rem; margin: 2rem 0; }
-    .conclusion h3 { color: var(--primary); font-size: 1.15rem; font-weight: 700; margin-bottom: .7rem; }
-
-    /* ── RELATED ── */
-    #paginas-relacionadas h2 { color: var(--primary); font-size: 1.2rem; font-weight: 700; margin-bottom: 1rem; }
-    #paginas-relacionadas ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: .75rem; }
-    #paginas-relacionadas ul li a {
-      display: inline-block;
-      padding: .5rem 1rem;
-      background: var(--primary);
-      color: #fff;
-      border-radius: 6px;
-      font-size: .9rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: background .2s;
-    }
-    #paginas-relacionadas ul li a:hover { background: var(--primary-dark); }
-
-    /* ── FOOTER ── */
-    footer { border-top: 1px solid var(--border); padding: 2rem 0; text-align: center; color: var(--muted-fg); font-size: .9rem; }
-
-    /* ── DIVIDER ── */
-    .divider { border: none; height: 1px; background: var(--border); margin: 2rem 0; }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 600px) {
-      .page-header h1 { font-size: 1.5rem; }
-      .page-header .subtitle { font-size: .95rem; }
-      .summary-table { font-size: .82rem; }
-      .summary-table thead th, .summary-table tbody td { padding: .65rem .6rem; }
-      .phone-card { flex-direction: column; }
-      .phone-card-actions { justify-content: flex-start; }
-      .back-button { font-size: .78rem; padding: .35rem .7rem; }
-      .channel-grid { grid-template-columns: 1fr; }
-    }
-  </style>
+  <!-- CSS compartilhado do site -->
+  <link rel="stylesheet" href="/assets/site.css" />
   <meta property="og:image" content="https://telefone.wiki.br/assets/og-default.png">
   <meta name="twitter:image" content="https://telefone.wiki.br/assets/og-default.png">
   <link rel="icon" href="/favicon.ico" sizes="48x48" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 </head>
-<body>
+<body class="op-tim">
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NLMC2HLF"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <header class="page-header">
-    <div class="container">
-      <a href="/" class="back-button">← Voltar</a>
-      <h1>Número da TIM (2026): telefone, SAC, WhatsApp e 0800</h1>
-      <p class="subtitle">Todos os telefones da TIM — atendimento, cancelamento, portabilidade, TIM Live e empresas — conferidos nas páginas oficiais da operadora</p>
-      <div class="badge-updated">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-        Números verificados em julho de 2026
-      </div>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="/">
+        <span class="brand-badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+        <span>telefone<em>.wiki.br</em></span>
+      </a>
+      <nav class="topnav" aria-label="Categorias">
+        <a href="/#operadoras">Operadoras</a>
+        <a href="/#bancos">Bancos</a>
+        <a href="/#compras">Compras</a>
+        <a href="/#tv-streaming">TV e Streaming</a>
+        <a href="/#governo">Governo</a>
+      </nav>
     </div>
   </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">TIM · Telefones de atendimento</p>
+      <h1>Número da TIM (2026): telefone, SAC, WhatsApp e 0800</h1>
+      <p class="subtitle">Todos os telefones da TIM — atendimento, cancelamento, portabilidade, TIM Live e empresas — conferidos nas páginas oficiais da operadora</p>
+      <p class="last-updated">Números verificados em julho de 2026</p>
+    </div>
+  </section>
 
   <nav class="breadcrumb" aria-label="Breadcrumb">
     <div class="container">
